@@ -1,0 +1,91 @@
+version: "3.7"
+volumes:
+  socket_dir:
+  bundle_cache:
+  pgdata:
+networks:
+  frontend:
+  backend:
+services:
+  postgres:
+    image: postgres:11.1-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: whale
+      POSTGRES_PASSWORD: booyakasha
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ~/novu-data/ssl/server.key:/var/ssl/server.key:delegated
+      - ~/novu-data/ssl/server.crt:/var/ssl/server.crt:delegated
+    command: >
+      -c ssl=on
+      -c ssl_key_file=/var/ssl/server.key
+      -c ssl_cert_file=/var/ssl/server.crt
+      -c max_connections=600
+      -c shared_buffers=2560MB
+      -c effective_cache_size=7680MB
+      -c maintenance_work_mem=640MB
+      -c checkpoint_completion_target=0.7
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+      -c work_mem=4369kB
+      -c min_wal_size=1GB
+      -c max_wal_size=2GB
+      -c max_worker_processes=6
+      -c max_parallel_workers_per_gather=3
+      -c max_parallel_workers=6
+    networks:
+      backend:
+        aliases:
+          - whale-postgres.docker
+  # nginx:
+  #   image: nginx
+  #   ports:
+  #     - '3000:3000'
+  #   volumes:
+  #     - ./log/nginx:/var/log/nginx:cached
+  #     - ./docker/nginx/nyx.template:/etc/nginx/conf.d/nyx.template:delegated
+  #     - nginx_certs:/etc/nginx/ssl
+  #     - ~/.aws:/var/lib/nginx/.aws:delegated
+  #     - socket_dir:/socket # shared volume to hold the socket. nginx and the app must run on the same host
+  #   environment:
+  #     USE_DEV_CERT: 'true'
+  #     APP_NAME: nyx
+  #     NGINX_PORT: '14011'
+  #     NGINX_CERT: /etc/nginx/ssl/server.cer
+  #     NGINX_KEY: /etc/nginx/ssl/server.key
+  #     NGINX_DHPARAM: /etc/nginx/ssl/dhparam.pem
+  #     NGINX_UPSTREAM: unix:///socket/nyx.sock
+  #   networks:
+  #     frontend:
+  #       aliases:
+  #         - nyx-nginx.docker
+  app:
+    image: whale
+    build:
+      context: .
+    depends_on:
+      - postgres
+      # - nginx
+    networks:
+      - backend
+    command: bundle exec puma -C config/puma.rb
+    stdin_open: true
+    tty: true
+    volumes:
+      - bundle_cache:/bundle
+      - ./:/opt/whale:delegated
+      - socket_dir:/opt/nyx/socket # shared volume to hold the socket. nginx and the app must run on the same host
+  # queue_worker:
+  #   image: nyx
+  #   depends_on:
+  #     - postgres
+  #   command: bundle exec rake queue:worker
+  #   networks:
+  #     - backend
+  #   volumes:
+  #     - bundle_cache:/bundle
+  #     - .:/opt/nyx:delegated

@@ -63,6 +63,11 @@ module Whale
     origins = ENV['ACTION_CABLE_ALLOWED_REQUEST_ORIGINS'].split(',')
     origins.map! { |url| /#{url}/ }
     config.action_cable.allowed_request_origins = origins
+
+    config.generators do |g|
+      # Don't generate assets for Sprockets
+      g.assets = nil
+    end
   end
 end
 

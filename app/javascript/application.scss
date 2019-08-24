@@ -1,0 +1,19 @@
+html,
+body {
+  .ocean {
+    background: blue;
+    height: 600px;
+    width: stretch;
+  }
+
+  .sky {
+    background: LIGHTCYAN;
+    height: 300px;
+    width: stretch;
+  }
+
+  .whale {
+    margin: 2rem;
+    animation: slide-up 0.4s ease;
+  }
+}

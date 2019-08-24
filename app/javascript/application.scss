@@ -1,13 +1,13 @@
 html,
 body {
   .ocean {
-    background: blue;
+    background-image: url('./images/ocean.jpg');
     height: 600px;
     width: stretch;
   }
 
   .sky {
-    background: LIGHTCYAN;
+    background-image: url('./images/sky.jpeg');
     height: 300px;
     width: stretch;
   }

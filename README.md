@@ -16,7 +16,7 @@ https://hub.docker.com/editions/community/docker-ce-desktop-mac
 Clone this repo. Then run the following in your shell:
 ```
 docker-compose build
-docker-compose run --rm web rails db:create db:migrate
+docker-compose run --rm web rake db:create db:migrate
 docker-compose up
 ```
 

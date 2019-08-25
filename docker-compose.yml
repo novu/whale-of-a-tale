@@ -33,7 +33,6 @@ services:
     depends_on:
       - 'postgres'
       - 'redis'
-    build: .
     image: whale
     command: sidekiq -C config/sidekiq.yml.erb
     volumes:
@@ -46,7 +45,6 @@ services:
   cable:
     depends_on:
       - 'redis'
-    build: .
     image: whale
     command: puma -p 28080 cable/config.ru
     ports:
@@ -59,7 +57,6 @@ services:
       - '.env'
 
   webpack:
-    build: .
     image: whale
     command: ./bin/webpack-dev-server
     ports:

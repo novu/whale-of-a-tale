@@ -1,0 +1,24 @@
+<%
+ title "Welcome to Whale of a Tale!"
+ meta_description "Welcome to Whale of a Tale!"
+ heading "Welcome to Whale of a Tale!"
+%>
+
+<div class="row">
+  <div class="col-sm-8">
+    <p class="lead">
+      You're running Rails on Docker!
+    </p>
+    <p>
+      Ruby version: <%= RUBY_VERSION %>
+    </p>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+<div class="sky">
+</div>
+
+<div class="ocean">
+  <img class="whale" src="<%= asset_pack_path 'media/images/whale.png' %>" />
+</div>

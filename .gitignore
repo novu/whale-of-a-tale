@@ -19,7 +19,6 @@
 
 /vendor/bundle
 /public/assets/*
-.env
 
 /public/packs
 /public/packs-test

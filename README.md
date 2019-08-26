@@ -9,9 +9,7 @@ Novu is a Ruby/Rails shop that has adopted Docker for both development and produ
 Part of what's coolest about working with Docker is that your configuration can be baked in so well that new developers need to do very little to have a working copy of an application. This example shows that you can have multiple processes started from one image, all working together to make whales fly.
 
 # Getting started
-Make sure you have Docker installed.
-https://docs.docker.com/install/
-https://hub.docker.com/editions/community/docker-ce-desktop-mac
+Make sure you have the [Docker Engine installed](https://hub.docker.com/editions/community/docker-ce-desktop-mac), if you have not already. Note that you'll need to sign up for an account. You can learn more about [Docker Engine](https://docs.docker.com/install/) here.
 
 Clone this repo. Then run the following in your shell:
 ```

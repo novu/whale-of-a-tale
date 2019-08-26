@@ -24,6 +24,7 @@ services:
       - '3000:3000'
     volumes:
       - '.:/app'
+      - 'bundle:/usr/local/bundle'
       - 'node_modules:/app/node_modules'
     env_file:
       - '.env'
@@ -36,6 +37,7 @@ services:
     command: sidekiq -C config/sidekiq.yml.erb
     volumes:
       - '.:/app'
+      - 'bundle:/usr/local/bundle'
       - 'node_modules:/app/node_modules'
     env_file:
       - '.env'
@@ -49,6 +51,7 @@ services:
       - '28080:28080'
     volumes:
       - '.:/app'
+      - 'bundle:/usr/local/bundle'
       - 'node_modules:/app/node_modules'
     env_file:
       - '.env'
@@ -60,6 +63,7 @@ services:
       - '3035:3035'
     volumes:
       - '.:/app'
+      - 'bundle:/usr/local/bundle'
       - 'node_modules:/app/node_modules'
     env_file:
       - '.env'
@@ -68,3 +72,4 @@ volumes:
   redis:
   postgres:
   node_modules:
+  bundle:

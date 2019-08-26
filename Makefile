@@ -1,7 +1,7 @@
 RUN_ARGS := $(strip $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS)) )# Strip off make target and obtain subsequent parameters.
 $(eval $(RUN_ARGS):;@:) # ...and turn them into do-nothing targets
 
-CLEANUP_FILES ?= $(CURRENT_DIR)_redis $(CURRENT_DIR)_node_modules
+CLEANUP_FILES ?= $(CURRENT_DIR)_redis $(CURRENT_DIR)_node_modules $(CURRENT_DIR)_bundle
 CURRENT_DIR = $(notdir $(shell pwd))
 DB_USER ?= $(USER)
 
@@ -18,7 +18,7 @@ __check_defined = \
     $(if $(value $1),, \
       $(error Undefined $1$(if $2, ($2))))
 
-sh: ## Drop into a container shell. i.e. make bash web, make bash postgres
+sh: ## Drop into a container shell. i.e. make sh web, make sh postgres
 	@docker-compose run --rm $(RUN_ARGS) sh
 
 binstall: ## bundle install: Runs bundle install within the web container to update the local Gemcache volume

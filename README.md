@@ -27,10 +27,6 @@ Click the sky to make the whale fly! Watch your logs to see ActionCable and Side
 
 [Slides from 2019-08-26 ruby.mn presentation](2019-08-26_rubymn_slides.pdf)
 
-## Demo
-
-![GIF screencast of demo](img/2019-08-26_rubymn_demo.webm)
-
 ## Thanks to...
 [https://github.com/nickjj/orats](https://github.com/nickjj/orats) - Opinionated Rails Template that this repo is based off of
 [https://evilmartians.com/chronicles/evil-front-part-1](https://evilmartians.com/chronicles/evil-front-part-1) - Evil Martians' guide to front end Rails and Webpacker

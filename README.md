@@ -21,6 +21,14 @@ docker-compose up
 Go to [http://localhost:3000/](http://localhost:3000/) in your favorite browser.
 Click the sky to make the whale fly! Watch your logs to see ActionCable and Sidekiq working to send the message around.
 
+# Presentation
+
+## Slides
+
+[PDF of slides from 2019-08-26 presentation at ruby.mn](2019-08-26_rubymn_slides.pdf)
+
+## Demo
+
 <iframe src='https://gfycat.com/ifr/TangibleFinishedGroundhog' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
 
 ## Thanks to...

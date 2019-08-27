@@ -25,11 +25,11 @@ Click the sky to make the whale fly! Watch your logs to see ActionCable and Side
 
 ## Slides
 
-[PDF of slides from 2019-08-26 presentation at ruby.mn](2019-08-26_rubymn_slides.pdf)
+[Slides from 2019-08-26 ruby.mn presentation](2019-08-26_rubymn_slides.pdf)
 
 ## Demo
 
-<iframe src='https://gfycat.com/ifr/TangibleFinishedGroundhog' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
+![GIF screencast of demo](https://gfycat.com/tangiblefinishedgroundhog.gif)
 
 ## Thanks to...
 [https://github.com/nickjj/orats](https://github.com/nickjj/orats) - Opinionated Rails Template that this repo is based off of

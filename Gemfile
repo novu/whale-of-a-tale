@@ -18,7 +18,7 @@ gem 'rack-timeout', '~> 0.5'
 gem 'jbuilder', '~> 2.5'
 
 # Use PostgreSQL as the database for Active Record
-gem 'pg', '~> 1.0'
+gem 'pg', '~> 1.2'
 
 # Use Redis Rails to set up a Redis backed Cache and / or Session
 gem 'redis', '~> 4.0'

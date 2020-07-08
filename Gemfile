@@ -15,7 +15,7 @@ gem 'puma', '~> 3.12'
 gem 'rack-timeout', '~> 0.5'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.10'
 
 # Use PostgreSQL as the database for Active Record
 gem 'pg', '~> 1.2'

@@ -24,7 +24,7 @@ gem 'pg', '~> 1.0'
 gem 'redis', '~> 4.2'
 
 # Use Sidekiq as a background job processor through Active Job
-gem 'sidekiq', '~> 5.1'
+gem 'sidekiq', '~> 6.0'
 
 # Use Clockwork for recurring background tasks without needing cron
 # gem 'clockwork', '~> 2.0'

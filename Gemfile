@@ -73,7 +73,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 1.0'
 
   # Access an IRB console on exception pages or by using <%= console %>
-  gem 'web-console', '~> 3.3.0'
+  gem 'web-console', '~> 3.7.0'
 
   # Get notified of file changes. Read more: https://github.com/guard/listen
   gem 'listen', '>= 3.0.5', '< 3.2'

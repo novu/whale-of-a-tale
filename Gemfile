@@ -70,7 +70,7 @@ end
 
 group :development do
   # Enable a debug toolbar to help profile your application
-  gem 'rack-mini-profiler', '~> 1.0'
+  gem 'rack-mini-profiler', '~> 2.3'
 
   # Access an IRB console on exception pages or by using <%= console %>
   gem 'web-console', '~> 3.7.0'

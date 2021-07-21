@@ -76,7 +76,7 @@ group :development do
   gem 'web-console', '~> 3.7.0'
 
   # Get notified of file changes. Read more: https://github.com/guard/listen
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5', '< 3.7'
 
   # Use Spring. Read more: https://github.com/rails/spring
   gem 'spring'
